@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>책 소개 & 요약 만들기</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="wrap">
+  <h1>책 소개 & 요약 만들기</h1>
+
+  <div class="grid">
+
+    <section class="card">
+
+      <label>책 제목</label>
+      <input id="title" type="text" placeholder="예: Scythe"/>
+
+      <label>저자</label>
+      <input id="author" type="text" placeholder="예: Neal Shusterman"/>
+
+      <label>말투</label>
+      <select id="tone">
+        <option value="neutral">기본</option>
+        <option value="friendly">친근하게</option>
+        <option value="serious">진지하게</option>
+        <option value="fun">재밌게</option>
+      </select>
+
+      <label>요약 문장 수</label>
+      <input id="num" type="number" min="1" max="20" value="6"/>
+
+      <label>언어</label>
+      <select id="lang">
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+      </select>
+
+      <div class="controls">
+        <button onclick="generateAll()">소개 + 요약</button>
+        <button onclick="generateIntro()" class="ghost">소개만</button>
+        <button onclick="generateSummary()" class="ghost">요약만</button>
+        <button onclick="clearAll()" class="ghost">지우기</button>
+      </div>
+
+    </section>
+
+    <aside class="right-col">
+
+      <div class="card">
+        <label>자동 생성된 소개</label>
+        <div id="introOut" class="output"></div>
+        <button onclick="copyText('introOut')" class="ghost">복사</button>
+      </div>
+
+      <div class="card">
+        <label>자동 생성된 요약</label>
+        <div id="summaryOut" class="output"></div>
+        <button onclick="copyText('summaryOut')" class="ghost">복사</button>
+      </div>
+
+    </aside>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
